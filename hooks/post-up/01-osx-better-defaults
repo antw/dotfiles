@@ -15,6 +15,13 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 1
 
+# Disable automatic capitalization, smart quotes, full stops as they're annoying
+# when writing code.
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
 # UI
 # --
 
@@ -61,13 +68,6 @@ defaults write com.apple.dashboard mcx-disabled -bool true
 
 # Don't show Dashboard as a Space
 defaults write com.apple.dock dashboard-in-overlay -bool true
-
-# Disable automatic capitalization, smart quotes, full stops as they're annoying 
-# when writing code.
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Never go into computer sleep mode.
 sudo systemsetup -setcomputersleep Off > /dev/null

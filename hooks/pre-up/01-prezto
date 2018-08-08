@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+set -e
+
+if [[ -d ~/.zprezto ]]; then
+  echo "Updating Prezto..."
+
+  cd ~/.zprezto
+
+  git fetch
+  git reset origin/master --hard
+  git clean -fd
+else
+  echo "Cloning Prezto..."
+  git clone https://github.com/sorin-ionescu/prezto ~/.zprezto
+  cd ~/.zprezto
+fi
+
+git submodule update --init --recursive
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  if [[ ! -f "${ZDOTDIR:-$HOME}/.${rcfile:t}" ]]; then
+    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+  fi
+done
+
+rm -f ~/.zlogout
+rm -f ~/.zpreztorc

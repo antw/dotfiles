@@ -1,0 +1,22 @@
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+  UseKeychain yes
+
+  Compression yes
+  ControlMaster auto
+  ControlPath ~/.ssh/control/%h
+  ControlPersist 1800
+  Protocol 2
+  ServerAliveCountMax 10
+  ServerAliveInterval 20
+  TCPKeepAlive yes
+  UseRoaming no
+
+Host github.com
+  ControlMaster auto
+  ControlPersist 120
+
+Host et-model.com *.et-model.com et-engine.com *.et-engine.com
+  User deploy
+  IdentityFile ~/.ssh/quintel.anthony.williams.pem

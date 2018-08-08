@@ -1,0 +1,38 @@
+[user]
+  name = Anthony Williams
+  email = hi@antw.io
+[alias]
+  p = push
+  c = commit
+  s = status
+  d = diff
+  a = add
+  co = checkout
+  l = log
+  up = pull --rebase --autostash
+[branch]
+  autosetuprebase = always
+[color]
+  ui = always
+  diff = auto
+  status = auto
+  branch = auto
+[commit]
+  verbose = false
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  editor = vim +1 -c start
+[fetch]
+  prune = true
+[format]
+  pretty = %C(yellow)%h%Creset - %s%C(blue)%d%Creset %C(green)(%cr)%Creset %C(cyan)<%an>%Creset
+[github]
+  user = antw
+[grep]
+  lineNumber = true
+[push]
+  default = simple
+[rebase]
+  autosquash = true

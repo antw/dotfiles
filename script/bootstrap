@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -e
+
+# Ensure we're in the correct path
+cd "$(dirname "$0")/.."
+
+# Install homebrew if it's missing
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Installing homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
+  echo "Installing rcm"
+  brew install thoughtbot/formulae/rcm
+fi
+
+env RCRC=`pwd`/rcrc rcup
+
+# Setup the git origin so that I can actually push stuff
+git remote set-url origin git@github.com:antw/dotfiles.git

@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -e
+
+# Ensure directories exist
+autoload_root=~/.vim/autoload
+bundle_root=~/.vim/bundle
+
+mkdir -p "$autoload_root" "$bundle_root"
+
+# ensure pathogen is installed
+curl -LSso "$autoload_root/pathogen.vim" https://tpo.pe/pathogen.vim
+
+plugins=()
+
+# Language
+plugins=("${plugins[@]}" "avakhov/vim-yaml")
+plugins=("${plugins[@]}" "fatih/vim-go")
+plugins=("${plugins[@]}" "pangloss/vim-javascript")
+plugins=("${plugins[@]}" "tpope/vim-git")
+plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
+
+# UI
+plugins=("${plugins[@]}" "dracula/vim")
+
+# Helpers
+plugins=("${plugins[@]}" "michaeljsmith/vim-indent-object")
+plugins=("${plugins[@]}" "tpope/vim-endwise")
+plugins=("${plugins[@]}" "tpope/vim-surround")
+
+for plugin in "${plugins[@]}"; do
+  repo="https://github.com/${plugin}.git"
+  base=$(basename "$plugin")
+
+  if [ -d "$bundle_root/$base" ]; then
+    git -C "$bundle_root/$base" pull &> /dev/null
+  else
+    git -C "$bundle_root" clone "$repo" &> /dev/null
+  fi
+done

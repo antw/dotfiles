@@ -1,0 +1,2 @@
+EXCLUDES="files script"
+DOTFILES_DIRS="$HOME/src/github.com/antw/dotfiles $HOME/.icloud/dotfiles"

@@ -26,6 +26,9 @@ set smartcase                   " ... unless they contain at least one capital
 
 "" Appearance ----------------------------------------------------------------
 
+let g:dracula_colorterm = 0
+let g:dracula_italic = 0
+
 set ruler                       " line and column number.
 set list                        " show invisble characters.
 set background=dark

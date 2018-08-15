@@ -14,6 +14,7 @@ brew 'gnupg'
 brew 'golang'
 brew 'grc'
 brew 'hub'
+brew 'keyboardcleantool'
 brew 'mas'
 brew 'mysql@5.7', link: true, conflicts_with: ['mysql']
 brew 'node'

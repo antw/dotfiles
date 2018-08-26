@@ -148,7 +148,7 @@ function prompt_antw_setup {
   zstyle ':prezto:module:git:info:action' format '%F{7}:%f%%B%F{9}%s%f%%b'
   zstyle ':prezto:module:git:info:branch' format ' %F{2}%b%f'
   zstyle ':prezto:module:git:info:commit' format ' %%B%F{3}%.7c%f%%b'
-  zstyle ':prezto:module:git:info:stashed' format ' %%B%F{6}✭%f%%b'
+  zstyle ':prezto:module:git:info:stashed' format ' %%B%F{6}$%f%%b'
 
 #   zstyle ':prezto:module:git:info:action' format ':%%B%F{yellow}%s%f%%b'
 #   zstyle ':prezto:module:git:info:commit' format ':%F{green}%.7c%f'

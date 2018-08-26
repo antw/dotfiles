@@ -42,6 +42,7 @@ cask 'kap'
 cask 'sequel-pro'
 cask 'slack'
 cask 'spotify'
+cask 'steam'
 cask 'visual-studio-code'
 cask 'vlc'
 

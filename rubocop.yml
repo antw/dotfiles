@@ -96,6 +96,10 @@ Layout/MultilineMethodCallIndentation:
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
+# Prefer alias_method over alias
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
 # Only suggest guard clauses when a block is three or more lines long.
 Style/GuardClause:
   MinBodyLength: 3 # Default is 1.

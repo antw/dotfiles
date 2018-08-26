@@ -104,6 +104,9 @@ Style/Alias:
 Style/GuardClause:
   MinBodyLength: 3 # Default is 1.
 
+Metrics/AbcSize:
+  Enabled: false
+
 # Ignore long blocks in specs.
 Metrics/BlockLength:
   Exclude:

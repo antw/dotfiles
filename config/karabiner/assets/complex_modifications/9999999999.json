@@ -32,6 +32,11 @@
                   "vendor_id": 2131,
                   "product_id": 256,
                   "description": "HHKB Professional"
+                },
+                {
+                  "vendor_id": 1241,
+                  "product_id": 6168,
+                  "description": "Filco Tenkeyless"
                 }
               ]
             }

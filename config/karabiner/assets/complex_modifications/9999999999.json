@@ -37,6 +37,11 @@
                   "vendor_id": 1241,
                   "product_id": 6168,
                   "description": "Filco Tenkeyless"
+                },
+                {
+                  "vendor_id": 21057,
+                  "product_id": 19289,
+                  "description": "RAMA KOYU (RAMA.WORKS)"
                 }
               ]
             }

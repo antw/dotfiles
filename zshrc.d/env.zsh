@@ -1,3 +1,5 @@
+export ITERM2_SHOULD_DECORATE_PROMPT=0
+
 export GOPATH=$HOME
 
 export VISUAL=vim

@@ -25,6 +25,18 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # UI
 # --
 
+# Use dark mode only for bar and dock.
+#
+# Revert with: defaults write -g NSRequiresAquaSystemAppearance -bool No
+#          or: defaults delete -g NSRequiresAquaSystemAppearance
+#
+# See: http://osxdaily.com/2018/10/15/dark-menu-dock-light-theme-macos/
+defaults write -g NSRequiresAquaSystemAppearance -bool Yes
+
+# defaults write com.apple.notificationcenterui NSRequiresAquaSystemAppearance -bool No
+# defaults write com.apple.finder NSRequiresAquaSystemAppearance -bool Yes; killall Finder
+# defaults write com.apple.Notes NSRequiresAquaSystemAppearance -bool Yes; killall Notes
+
 # Use dark menu bar and dock
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 

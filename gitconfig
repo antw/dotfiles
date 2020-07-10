@@ -19,6 +19,7 @@
   branch = auto
 [commit]
   verbose = false
+  gpgSign = true
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
@@ -36,3 +37,5 @@
   default = simple
 [rebase]
   autosquash = true
+[tag]
+  gpgSign = true

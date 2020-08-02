@@ -1,8 +1,8 @@
 {
-  "title": "HHKB Caps and return to ctrl. Ctrl to caps.",
+  "title": "antw Caps and return to ctrl. Ctrl to caps.",
   "rules": [
     {
-      "description": "HHKB Post escape if left_ctrl is pressed alone, left_ctrl otherwise",
+      "description": "antw Post escape if left_ctrl is pressed alone, left_ctrl otherwise",
       "manipulators": [
         {
           "from": {

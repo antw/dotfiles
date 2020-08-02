@@ -25,6 +25,9 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 # UI
 # --
 
+# Improve font rendering on non-HiDPI displays.
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+
 # Use dark mode only for bar and dock.
 #
 # Revert with: defaults write -g NSRequiresAquaSystemAppearance -bool No

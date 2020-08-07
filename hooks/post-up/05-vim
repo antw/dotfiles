@@ -14,8 +14,6 @@ plugins=()
 
 # Language
 plugins=("${plugins[@]}" "avakhov/vim-yaml")
-plugins=("${plugins[@]}" "fatih/vim-go")
-plugins=("${plugins[@]}" "pangloss/vim-javascript")
 plugins=("${plugins[@]}" "tpope/vim-git")
 plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
 

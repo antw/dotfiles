@@ -23,6 +23,7 @@ brew 'puma/puma/puma-dev'
 brew 'python'
 brew 'rbenv'
 brew 'ssh-copy-id'
+brew 'yarn'
 brew 'youtube-dl'
 brew 'zsh'
 

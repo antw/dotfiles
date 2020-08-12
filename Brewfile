@@ -50,6 +50,5 @@ cask 'vlc'
 
 mas '1Password', id: 1333542190
 mas 'Amphetamine', id: 937984704
-mas 'Spark', id: 1176895641
 mas 'The Unarchiver', id: 425424353
 mas 'Things3', id: 904280696

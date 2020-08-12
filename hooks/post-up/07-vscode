@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -e
+
+mkdir -p "~/Library/Application\ Support/Code/User"
+ln -s "~/.config/Code/User/settings.json" "~/Library/Application\ Support/Code/User/settings.json"
+
+plugins=()
+
+# Colour
+plugins=("${plugins[@]}" "coenraads.bracket-pair-colorizer")
+plugins=("${plugins[@]}" "dracula-theme.theme-dracula")
+plugins=("${plugins[@]}" "pkief.material-icon-theme")
+
+# Languages
+plugins=("${plugins[@]}" "aki77.haml-lint")
+plugins=("${plugins[@]}" "karunamurti.haml")
+plugins=("${plugins[@]}" "rebornix.ruby")
+plugins=("${plugins[@]}" "robinbentley.sass-indented")
+plugins=("${plugins[@]}" "rust-lang.rust")
+
+# Linters
+plugins=("${plugins[@]}" "dbaeumer.vscode-eslint")
+plugins=("${plugins[@]}" "misogi.ruby-rubocop")
+
+# Utilities
+plugins=("${plugins[@]}" "christian-kohler.path-intellisense")
+plugins=("${plugins[@]}" "dkundel.vscode-new-file")
+plugins=("${plugins[@]}" "eamodio.gitlens")
+plugins=("${plugins[@]}" "stkb.rewrap")
+plugins=("${plugins[@]}" "vscodevim.vim")
+
+for plugin in "${plugins[@]}"; do
+  code --force --install-extension "$plugin"
+done

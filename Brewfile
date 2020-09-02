@@ -43,7 +43,6 @@ cask 'kap'
 cask 'karabiner-elements'
 cask 'keyboardcleantool'
 cask 'rectangle'
-cask 'sequel-pro'
 cask 'slack'
 cask 'spotify'
 cask 'steam'
@@ -53,5 +52,6 @@ cask 'vlc'
 mas '1Password', id: 1333542190
 mas 'Amphetamine', id: 937984704
 mas 'Magnet', id: 441258766
+mas 'Sequel Ace', id: 1518036000
 mas 'The Unarchiver', id: 425424353
 mas 'Things3', id: 904280696

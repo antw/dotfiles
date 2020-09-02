@@ -15,7 +15,7 @@ plugins=("${plugins[@]}" "pkief.material-icon-theme")
 plugins=("${plugins[@]}" "aki77.haml-lint")
 plugins=("${plugins[@]}" "karunamurti.haml")
 plugins=("${plugins[@]}" "rebornix.ruby")
-plugins=("${plugins[@]}" "robinbentley.sass-indented")
+plugins=("${plugins[@]}" "syler.sass-indented")
 plugins=("${plugins[@]}" "rust-lang.rust")
 
 # Linters

@@ -8,45 +8,6 @@
 
 # Load dependencies.
 
-# pmodload 'helper'
-# 
-# : ${PROMPT_SYMBOL:=">"}
-# : ${PROMPT_UNSTAGED_SYMBOL:="*"}
-# : ${PROMPT_STAGED_SYMBOL:="!"}
-# 
-# prompt_antw_precmd() {
-#   vcs_info
-# 
-#   if [ -n "$SSH_CLIENT" ]; then
-#     prompt_host='%F{yellow}%M '
-#   else
-#     prompt_host=''
-#   fi
-# 
-#   PROMPT="${prompt_host}%F{"12"}$(prompt-pwd)%f %F{"1"}%B${PROMPT_SYMBOL}%b%f "
-#   RPROMPT="${vcs_info_msg_0_}"
-# }
-# 
-# prompt_antw_setup() {
-#   autoload -Uz add-zsh-hook
-#   autoload -Uz vcs_info
-# 
-#   zstyle ':vcs_info:*' enable git
-#   zstyle ':vcs_info:*' formats "%F{11} %b%f%F{1}%u%c%f"
-#   zstyle ':vcs_info:*' check-for-changes true
-#   zstyle ':vcs_info:*' unstagedstr $PROMPT_UNSTAGED_SYMBOL
-#   zstyle ':vcs_info:*' stagedstr $PROMPT_STAGED_SYMBOL
-# 
-#   setopt prompt_subst
-# 
-#   add-zsh-hook precmd prompt_antw_precmd
-# }
-# 
-# prompt_antw_setup "$@"
-
-# ------------------------------------------------------------------------------
-
-# Load dependencies.
 pmodload 'helper'
 
 function prompt_antw_async_callback {
@@ -69,6 +30,13 @@ function prompt_antw_async_callback {
         # Git target detected, update the git fragment and redisplay the prompt.
         _prompt_antw_git="${_git_target}${_git_post_target}"
         zle && zle reset-prompt
+      fi
+      ;;
+    "[async]")
+      # Code is 1 for corrupted worker output and 2 for dead worker.
+      if [[ $2 -eq 2 ]]; then
+	  # Our worker died unexpectedly.
+          typeset -g prompt_prezto_async_init=0
       fi
       ;;
   esac

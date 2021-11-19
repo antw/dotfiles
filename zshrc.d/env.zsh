@@ -13,3 +13,6 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # Binaries
 export PATH=$PATH:$GOPATH/bin
+
+# Cargo / Rust
+source $HOME/.cargo/env

@@ -34,7 +34,7 @@ set list                        " show invisble characters.
 set background=dark
 colorscheme dracula
 
-set cc=81                       " show right margin at 80 characters.
+set cc=101                      " show right margin at 100 characters.
 
 set number
 

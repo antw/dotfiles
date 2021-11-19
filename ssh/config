@@ -5,7 +5,7 @@ Host *
 
   Compression yes
   ControlMaster auto
-  ControlPath ~/.ssh/control/%h
+  ControlPath ~/.ssh/control/%r@%h
   ControlPersist 1800
   Protocol 2
   ServerAliveCountMax 10

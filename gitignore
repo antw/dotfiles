@@ -21,6 +21,7 @@
 *.zip
 
 # Editors #
+.idea
 .vscode
 
 # Logs and databases #

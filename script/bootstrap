@@ -8,6 +8,8 @@ cd "$(dirname "$0")/.."
 if ! command -v brew >/dev/null 2>&1; then
   echo "Installing homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then

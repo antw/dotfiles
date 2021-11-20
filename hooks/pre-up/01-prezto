@@ -27,3 +27,4 @@ done
 
 rm -f ~/.zlogout
 rm -f ~/.zpreztorc
+rm -f ~/.zshrc

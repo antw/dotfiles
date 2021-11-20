@@ -12,12 +12,6 @@ if ! command -v brew >/dev/null 2>&1; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
-  echo "Installing rcm"
-  brew install thoughtbot/formulae/rcm
-fi
+brew install chezmoi
 
-env RCRC=`pwd`/rcrc rcup
-
-# Setup the git origin so that I can actually push stuff
-git remote set-url origin git@github.com:antw/dotfiles.git
+echo 'Homebrew and Chezmoi are installed. Run "chezmoi apply -v" to install dotfiles.'

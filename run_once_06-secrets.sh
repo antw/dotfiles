@@ -3,18 +3,24 @@ set -e
 
 export OP_SESSION="$(op signin my.1password.com hi@antw.dev --raw)"
 
-op get item 'GPG Key' | jq -r .details.notesPlain > ~/.ssh/id_rsa
-op get item 'SSH Key' | jq -r .details.notesPlain > ~/.gnupg/gpg.private.key
+op get document 'SSH Key' > ~/.ssh/id_rsa
 
 # Import GPG secret key
-gpg --import ~/.gnupg/gpg.private.key
-
-# Clear secret key
-rm ~/.gnupg/gpg.private.key
+op get document "GPG Key" | gpg --import
 
 # Set proper permissions on ~/.ssh
 chmod 600 ~/.ssh/id_*
 chmod 700 ~/.ssh
+
+# generate public keys
+for private in ~/.ssh/id_*; do
+  if [[ "$private" == *.pub ]]; then
+    continue
+  fi
+
+  echo $private
+  ssh-keygen -y -f $private > $private.pub
+done
 
 # Set proper permissions on ~/.gnppg
 chown -R $(whoami) ~/.gnupg/

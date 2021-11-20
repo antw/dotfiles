@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+set -e
+
+mkdir -p "~/Library/Application Support/Code/User"
+rm -f "~/Library/Application Support/Code/User/settings.json"
+ln -s "~/.config/Code/User/settings.json" "~/Library/Application Support/Code/User/settings.json"
+
+plugins=()
+
+# Colour
+plugins=("${plugins[@]}" "equinusocio.vsc-community-material-theme")
+plugins=("${plugins[@]}" "equinusocio.vsc-material-theme")
+plugins=("${plugins[@]}" "pkief.material-icon-theme")
+
+# Languages
+plugins=("${plugins[@]}" "aki77.haml-lint")
+plugins=("${plugins[@]}" "bungcip.better-toml")
+plugins=("${plugins[@]}" "golang.go")
+plugins=("${plugins[@]}" "jpoissonnier.vscode-styled-components")
+plugins=("${plugins[@]}" "karunamurti.haml")
+plugins=("${plugins[@]}" "mechatroner.rainbow-csv")
+plugins=("${plugins[@]}" "rebornix.ruby")
+plugins=("${plugins[@]}" "rust-lang.rust")
+plugins=("${plugins[@]}" "syler.sass-indented")
+plugins=("${plugins[@]}" "wingrunr21.vscode-ruby")
+plugins=("${plugins[@]}" "zxh404.vscode-proto3")
+
+# Linters
+plugins=("${plugins[@]}" "dbaeumer.vscode-eslint")
+plugins=("${plugins[@]}" "esbenp.prettier-vscode")
+plugins=("${plugins[@]}" "misogi.ruby-rubocop")
+
+# Utilities
+plugins=("${plugins[@]}" "christian-kohler.path-intellisense")
+plugins=("${plugins[@]}" "dkundel.vscode-new-file")
+plugins=("${plugins[@]}" "eamodio.gitlens")
+plugins=("${plugins[@]}" "formulahendry.auto-close-tag")
+plugins=("${plugins[@]}" "formulahendry.auto-rename-tag")
+plugins=("${plugins[@]}" "github.copilot")
+plugins=("${plugins[@]}" "kaiwood.endwise")
+plugins=("${plugins[@]}" "ms-azuretools.vscode-docker")
+plugins=("${plugins[@]}" "ms-vscode.hexeditor")
+plugins=("${plugins[@]}" "stkb.rewrap")
+plugins=("${plugins[@]}" "vscodevim.vim")
+
+# Remote
+plugins=("${plugins[@]}" "ms-vscode-remote.remote-containers")
+plugins=("${plugins[@]}" "ms-vscode-remote.remote-ssh")
+plugins=("${plugins[@]}" "ms-vscode-remote.remote-ssh-edit")
+plugins=("${plugins[@]}" "ms-vscode-remote.vscode-remote-extensionpack")
+plugins=("${plugins[@]}" "visualstudioexptteam.vscodeintellicode")
+
+
+for plugin in "${plugins[@]}"; do
+  code --force --install-extension "$plugin"
+done

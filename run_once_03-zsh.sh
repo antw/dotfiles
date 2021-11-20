@@ -1,6 +1,11 @@
-#!/usr/bin/env zsh
-
+#!/usr/bin/env bash
 set -e
+
+if [ -f "/usr/local/bin/zsh" ]; then
+  sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+else if [ -f "/opt/homebrew/bin/zsh"]; then
+  sudo dscl . -create /Users/$USER UserShell /opt/homebrew/bin/zsh
+fi
 
 if [[ -d ~/.zprezto ]]; then
   echo "Updating Prezto..."

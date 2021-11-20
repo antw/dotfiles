@@ -5,6 +5,12 @@ set -e
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 # HID
 # ---
 
@@ -23,8 +29,14 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Disable mouse acceleration.
-#defaults write .GlobalPreferences com.apple.mouse.scaling -1
-defaults write NSGlobalDomain com.apple.mouse.scaling -1
+# defaults write .GlobalPreferences com.apple.mouse.scaling -1
+# defaults write NSGlobalDomain com.apple.mouse.scaling -1
+
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+# Stop iTunes from responding to the keyboard media keys
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 # UI
 # --
@@ -32,17 +44,12 @@ defaults write NSGlobalDomain com.apple.mouse.scaling -1
 # Improve font rendering on non-HiDPI displays.
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
-# Use dark mode only for bar and dock.
-#
-# Revert with: defaults write -g NSRequiresAquaSystemAppearance -bool No
-#          or: defaults delete -g NSRequiresAquaSystemAppearance
-#
-# See: http://osxdaily.com/2018/10/15/dark-menu-dock-light-theme-macos/
-# defaults write -g NSRequiresAquaSystemAppearance -bool Yes
+# Enable subpixel font rendering on non-Apple LCDs
+# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
-# defaults write com.apple.notificationcenterui NSRequiresAquaSystemAppearance -bool No
-# defaults write com.apple.finder NSRequiresAquaSystemAppearance -bool Yes; killall Finder
-# defaults write com.apple.Notes NSRequiresAquaSystemAppearance -bool Yes; killall Notes
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # Use dark menu bar and dock
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
@@ -66,6 +73,16 @@ defaults write com.apple.dock tilesize -int 36
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
+
+# Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# Save to disk (not to iCloud) by default
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
 # Finder: Disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
 
@@ -82,6 +99,17 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock
+# in the login window
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
 # App Store
 # ---------
 
@@ -90,6 +118,9 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Misc
 # ----
+
+# Save screenshots to the desktop
+defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"

@@ -14,4 +14,3 @@ fi
 
 # Customize to your needs...
 for include ($HOME/.zshrc.d/*.zsh) source $include
-for include ($HOME/.zshrc.d/*.zsh) source $include

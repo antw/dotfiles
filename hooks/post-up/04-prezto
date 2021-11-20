@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-# Include custom files into .zshrc
-echo 'for include ($HOME/.zshrc.d/*.zsh) source $include' >> ~/.zshrc

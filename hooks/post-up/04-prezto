@@ -3,6 +3,3 @@ set -e
 
 # Include custom files into .zshrc
 echo 'for include ($HOME/.zshrc.d/*.zsh) source $include' >> ~/.zshrc
-
-# Link my theme.
-ln -s "$(dirname $(dirname $PWD))/files/prompt_antw_setup" ~/.zprezto/modules/prompt/functions

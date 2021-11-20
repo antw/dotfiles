@@ -17,7 +17,7 @@ if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
   brew install thoughtbot/formulae/rcm
 fi
 
-env RCRC=`pwd`/rcrc rcup
+env RCRC=`pwd`/rcrc rcup -t $(uname -p)
 
 # Setup the git origin so that I can actually push stuff
 git remote set-url origin git@github.com:antw/dotfiles.git

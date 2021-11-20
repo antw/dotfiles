@@ -15,4 +15,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export PATH=$PATH:$GOPATH/bin
 
 # Cargo / Rust
-source $HOME/.cargo/env
+if [ -f $HOME/.cargo/env ]; then
+  source $HOME/.cargo/env
+fi

@@ -38,7 +38,6 @@ zstyle ':prezto:load' pmodule \
   'gpg' \
   'completion' \
   'prompt' \
-  'python' \
   'ruby' \
   'git' \
   'fasd' \

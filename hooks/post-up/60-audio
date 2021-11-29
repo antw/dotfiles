@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+
+mkdir -p "$HOME/Library/Audio/Presets/FabFilter/FabFilter Pro-Q 3"
+
+ln -s "$HOME/.config/FabFilter Pro-Q 3/HD6XX.ffp" "$HOME/Library/Audio/Presets/FabFilter/FabFilter Pro-Q 3/HD6XX.ffp"
+ln -s "$HOME/.config/FabFilter Pro-Q 3/HD6XX Adjusted.ffp" "$HOME/Library/Audio/Presets/FabFilter/FabFilter Pro-Q 3/HD6XX Adjusted.ffp"

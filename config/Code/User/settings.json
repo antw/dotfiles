@@ -293,6 +293,10 @@
         "apiVersion": 2,
         "showGlobalVariables": false
     },
+    "go.lintTool":"golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ],
     "workbench.startupEditor": "welcomePage",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "css.validate": false,

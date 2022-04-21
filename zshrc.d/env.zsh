@@ -14,6 +14,10 @@ export HOMEBREW_NO_ANALYTICS=1
 # Binaries
 export PATH=$PATH:$GOPATH/bin
 
+# Python
+export PATH="$(pyenv root)/shims:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
 # Cargo / Rust
 if [ -f $HOME/.cargo/env ]; then
   source $HOME/.cargo/env

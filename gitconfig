@@ -10,6 +10,7 @@
   co = checkout
   l = log
   up = pull --rebase --autostash
+  fp = push --force-with-lease
 [branch]
   autosetuprebase = always
 [color]

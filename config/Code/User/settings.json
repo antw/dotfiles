@@ -254,7 +254,7 @@
     "editor.renderWhitespace": "none",
     "editor.minimap.enabled": false,
     "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.fontSize": 16,
     "telemetry.enableTelemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
     "workbench.editor.highlightModifiedTabs": true,

@@ -51,7 +51,6 @@
         "editor.tabSize": 4
     },
     "go.testOnSave": true,
-    "rust.show_warnings": false,
     // Disable italics.
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -302,9 +301,6 @@
     "css.validate": false,
     "html.format.contentUnformatted": "",
     "stylelint.config": {},
-    "json.schemas": [
-
-    ],
     "terminal.integrated.tabs.location": "left",
     "editor.cursorStyle": "line",
     "editor.lineNumbers": "on",
@@ -330,5 +326,10 @@
         "yaml": true,
         "plaintext": true,
         "markdown": false
-    }
+    },
+    "editor.linkedEditing": true,
+    "go.toolsManagement.autoUpdate": true,
+    "rust-analyzer.inlayHints.chainingHints.enable": false,
+    "rust-analyzer.inlayHints.typeHints.enable": false,
+    "editor.experimental.stickyScroll.enabled": true
 }

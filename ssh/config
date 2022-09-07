@@ -23,5 +23,5 @@ Host github.com
   ControlMaster auto
   ControlPersist 120
 
-Host et-model.com *.et-model.com et-engine.com *.et-engine.com
+Host *.energytransitionmodel.com
   IdentityFile ~/.ssh/quintel.anthony.williams.pem

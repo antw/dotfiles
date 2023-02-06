@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+for file in gitconfig
+do
+    fullpath=`realpath $file`
+    rm -rf "$HOME/.$file"
+    ln -s $fullpath "$HOME/.$file"
+done

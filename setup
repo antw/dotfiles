@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for file in gitconfig
+for file in gitconfig gitignore
 do
     fullpath=`realpath $file`
     rm -rf "$HOME/.$file"

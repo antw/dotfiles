@@ -1,0 +1,48 @@
+[user]
+  name = Anthony Williams
+  email = anthony.williams@shopify.com
+[alias]
+  p = push
+  c = commit
+  s = status
+  d = diff
+  a = add
+  co = checkout
+  l = log
+  up = pull --rebase --autostash
+  fp = push --force-with-lease
+[branch]
+  autosetuprebase = always
+[color]
+  ui = always
+  diff = auto
+  status = auto
+  branch = auto
+[commit]
+  verbose = false
+  #gpgSign = true
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  editor = vim +star +1 -c "redraw"
+[fetch]
+  prune = true
+[format]
+  pretty = %C(yellow)%h%Creset - %s%C(blue)%d%Creset %C(green)(%cr)%Creset %C(cyan)<%an>%Creset
+[github]
+  user = antw
+[grep]
+  lineNumber = true
+[push]
+  default = simple
+[rebase]
+  autosquash = true
+#[tag]
+#  gpgSign = true
+[pull]
+  rebase = true
+[init]
+  defaultBranch = main
+[merge]
+  conflictstyle = diff3

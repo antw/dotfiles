@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
+echo "Linking dotfiles..."
+
 for file in gitconfig gitignore zshrc zshrc.d
 do
     fullpath=`realpath $file`
@@ -9,16 +11,25 @@ do
 done
 
 # Karabiner.
+echo "Linking Karabiner..."
 mkdir -p $HOME/.config/karabiner/assets
 
 for file in config/karabiner/assets/complex_modifications/*
 do
     fullpath=`realpath $file`
     basename=`basename $file`
-    rm -rf "$HOME/.config/karabiner/assets/complex_modifications/$basename"
+    rm -r "$HOME/.config/karabiner/assets/complex_modifications/$basename"
     ln -s $fullpath "$HOME/.config/karabiner/assets/complex_modifications/$basename"
 done
 
 # VS Code
-rm -rf %HOME/.config/code
+echo "Configuring VS Code..."
+rm -r $HOME/.config/code
 ln -s `realpath config/code` "$HOME/.config/code"
+./scripts/vscode
+
+# Scripts
+echo "Setting macOS defaults..."
+./scripts/osx-better-defaults
+
+echo "Finished!"

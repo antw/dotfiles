@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+set -e
+
+mkdir -p "$HOME/Library/Application Support/Code/User"
+
+plugins=()
+
+# Colour
+plugins=("${plugins[@]}" "equinusocio.vsc-community-material-theme")
+plugins=("${plugins[@]}" "equinusocio.vsc-material-theme")
+plugins=("${plugins[@]}" "pkief.material-icon-theme")
+
+# Languages
+plugins=("${plugins[@]}" "mechatroner.rainbow-csv")
+plugins=("${plugins[@]}" "rebornix.ruby")
+plugins=("${plugins[@]}" "rust-lang.rust")
+plugins=("${plugins[@]}" "wingrunr21.vscode-ruby")
+
+# Utilities
+plugins=("${plugins[@]}" "christian-kohler.path-intellisense")
+plugins=("${plugins[@]}" "dkundel.vscode-new-file")
+plugins=("${plugins[@]}" "eamodio.gitlens")
+plugins=("${plugins[@]}" "formulahendry.auto-close-tag")
+plugins=("${plugins[@]}" "formulahendry.auto-rename-tag")
+plugins=("${plugins[@]}" "kaiwood.endwise")
+plugins=("${plugins[@]}" "ms-vscode.hexeditor")
+plugins=("${plugins[@]}" "stkb.rewrap")
+plugins=("${plugins[@]}" "vscodevim.vim")
+
+
+for plugin in "${plugins[@]}"; do
+  code --force --install-extension "$plugin"
+done

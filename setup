@@ -14,13 +14,10 @@ done
 echo "Linking Karabiner..."
 mkdir -p $HOME/.config/karabiner/assets
 
-for file in config/karabiner/assets/complex_modifications/*
-do
-    fullpath=`realpath $file`
-    basename=`basename $file`
-    rm -r "$HOME/.config/karabiner/assets/complex_modifications/$basename"
-    ln -s $fullpath "$HOME/.config/karabiner/assets/complex_modifications/$basename"
-done
+karabiner_config=`realpath config/karabiner/assets/complex_modifications`
+rm $HOME/.config/karabiner/assets/complex_modifications
+ln -s $karabiner_config $HOME/.config/karabiner/assets/complex_modifications
+exit
 
 # VS Code
 echo "Configuring VS Code..."

@@ -7,3 +7,14 @@ do
     rm -rf "$HOME/.$file"
     ln -s $fullpath "$HOME/.$file"
 done
+
+# Karabiner.
+mkdir -p $HOME/.config/karabiner/assets
+
+for file in config/karabiner/assets/complex_modifications/*
+do
+    fullpath=`realpath $file`
+    basename=`basename $file`
+    rm -rf "$HOME/.config/karabiner/assets/complex_modifications/$basename"
+    ln -s $fullpath "$HOME/.config/karabiner/assets/complex_modifications/$basename"
+done

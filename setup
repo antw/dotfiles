@@ -18,3 +18,7 @@ do
     rm -rf "$HOME/.config/karabiner/assets/complex_modifications/$basename"
     ln -s $fullpath "$HOME/.config/karabiner/assets/complex_modifications/$basename"
 done
+
+# VS Code
+rm -rf %HOME/.config/code
+ln -s `realpath config/code` "$HOME/.config/code"

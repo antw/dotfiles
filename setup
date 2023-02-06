@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for file in gitconfig gitignore
+for file in gitconfig gitignore zshrc zshrc.d
 do
     fullpath=`realpath $file`
     rm -rf "$HOME/.$file"

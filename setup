@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 for file in gitconfig gitignore zshrc zshrc.d
 do

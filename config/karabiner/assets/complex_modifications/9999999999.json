@@ -1,1 +1,53 @@
-/Users/antw/src/github.com/antw/dotfiles/config/karabiner/assets/complex_modifications/9999999999.json
+{
+  "title": "antw Caps and return to ctrl. Ctrl to caps.",
+  "rules": [
+    {
+      "description": "antw Post escape if left_ctrl is pressed alone, left_ctrl otherwise",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "device_if",
+              "identifiers": [
+                {
+                  "vendor_id": 2131,
+                  "product_id": 256,
+                  "description": "HHKB Professional"
+                },
+                {
+                  "vendor_id": 1241,
+                  "product_id": 6168,
+                  "description": "Filco Tenkeyless"
+                },
+                {
+                  "vendor_id": 21057,
+                  "product_id": 19289,
+                  "description": "RAMA KOYU (RAMA.WORKS)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

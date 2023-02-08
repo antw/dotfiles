@@ -3,29 +3,33 @@ set -e
 
 mkdir -p "$HOME/Library/Application Support/Code/User"
 
-plugins=()
+plugins=(
+  # Colour
 
-# Colour
-plugins=("${plugins[@]}" "equinusocio.vsc-community-material-theme")
-plugins=("${plugins[@]}" "equinusocio.vsc-material-theme")
-plugins=("${plugins[@]}" "pkief.material-icon-theme")
+  "equinusocio.vsc-community-material-theme"
+  "equinusocio.vsc-material-theme"
+  "pkief.material-icon-theme"
 
-# Languages
-plugins=("${plugins[@]}" "mechatroner.rainbow-csv")
-plugins=("${plugins[@]}" "rebornix.ruby")
-plugins=("${plugins[@]}" "rust-lang.rust")
-plugins=("${plugins[@]}" "wingrunr21.vscode-ruby")
+  # Languages
 
-# Utilities
-plugins=("${plugins[@]}" "christian-kohler.path-intellisense")
-plugins=("${plugins[@]}" "dkundel.vscode-new-file")
-plugins=("${plugins[@]}" "eamodio.gitlens")
-plugins=("${plugins[@]}" "formulahendry.auto-close-tag")
-plugins=("${plugins[@]}" "formulahendry.auto-rename-tag")
-plugins=("${plugins[@]}" "kaiwood.endwise")
-plugins=("${plugins[@]}" "ms-vscode.hexeditor")
-plugins=("${plugins[@]}" "stkb.rewrap")
-plugins=("${plugins[@]}" "vscodevim.vim")
+  "mechatroner.rainbow-csv"
+  "rebornix.ruby"
+  "rust-lang.rust"
+  "wingrunr21.vscode-ruby"
+
+  # Utilities
+
+  "christian-kohler.path-intellisense"
+  "dkundel.vscode-new-file"
+  "eamodio.gitlens"
+  "formulahendry.auto-close-tag"
+  "formulahendry.auto-rename-tag"
+  "kaiwood.endwise"
+  "ms-vscode.hexeditor"
+  "sorbet.sorbet-vscode-extension"
+  "stkb.rewrap"
+  "vscodevim.vim"
+)
 
 
 for plugin in "${plugins[@]}"; do

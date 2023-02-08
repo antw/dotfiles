@@ -331,5 +331,5 @@
     "go.toolsManagement.autoUpdate": true,
     "rust-analyzer.inlayHints.chainingHints.enable": false,
     "rust-analyzer.inlayHints.typeHints.enable": false,
-    "editor.experimental.stickyScroll.enabled": true
+    "editor.stickyScroll.enabled": true
 }

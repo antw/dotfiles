@@ -17,13 +17,19 @@ mkdir -p $HOME/.config/karabiner/assets
 karabiner_config=`realpath config/karabiner/assets/complex_modifications`
 rm $HOME/.config/karabiner/assets/complex_modifications
 ln -s $karabiner_config $HOME/.config/karabiner/assets/complex_modifications
-exit
 
 # VS Code
 echo "Configuring VS Code..."
-rm -r $HOME/.config/code
-ln -s `realpath config/code` "$HOME/.config/code"
+vscode_config_dest="$HOME/Library/Application Support/Code/User/settings.json"
+
+if [[ -f "$vscode_config_dest" ]]; then
+    rm "$vscode_config_dest"
+fi
+
+ln -s `realpath config/code/User/settings.json` "$vscode_config_dest"
 ./scripts/vscode
+
+exit
 
 # Scripts
 echo "Setting macOS defaults..."

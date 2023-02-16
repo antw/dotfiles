@@ -6,31 +6,37 @@ mkdir -p "$HOME/Library/Application Support/Code/User"
 plugins=(
   # Colour
 
-  "equinusocio.vsc-community-material-theme"
-  "equinusocio.vsc-material-theme"
-  "pkief.material-icon-theme"
+  "Equinusocio.vsc-community-material-theme",
+  "Equinusocio.vsc-material-theme",
+  "equinusocio.vsc-material-theme-icons",
+  "PKief.material-icon-theme",
 
   # Languages
 
-  "mechatroner.rainbow-csv"
-  "rebornix.ruby"
-  "rust-lang.rust"
-  "wingrunr21.vscode-ruby"
+  "itarato.byesig",
+  "GraphQL.vscode-graphql",
+  "GraphQL.vscode-graphql-syntax",
+  "KoichiSasada.vscode-rdbg",
+  "misogi.ruby-rubocop",
+  "Shopify.ruby-extensions-pack",
+  "Shopify.ruby-lsp",
+  "wingrunr21.vscode-ruby",
 
   # Utilities
 
-  "christian-kohler.path-intellisense"
-  "dkundel.vscode-new-file"
-  "eamodio.gitlens"
-  "formulahendry.auto-close-tag"
-  "formulahendry.auto-rename-tag"
-  "kaiwood.endwise"
-  "ms-vscode.hexeditor"
-  "sorbet.sorbet-vscode-extension"
-  "stkb.rewrap"
-  "vscodevim.vim"
+  "christian-kohler.path-intellisense",
+  "dbaeumer.vscode-eslint",
+  "dkundel.vscode-new-file",
+  "eamodio.gitlens",
+  "EditorConfig.EditorConfig",
+  "esbenp.prettier-vscode",
+  "formulahendry.auto-close-tag",
+  "formulahendry.auto-rename-tag",
+  "kaiwood.endwise",
+  "sorbet.sorbet-vscode-extension",
+  "stkb.rewrap",
+  "vscodevim.vim",
 )
-
 
 for plugin in "${plugins[@]}"; do
   code --force --install-extension "$plugin"

@@ -6,7 +6,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 brew "diff-so-fancy"
-brew "exa"
+brew "eva"
 brew "fd"
 brew "gh"
 brew "git"

@@ -253,7 +253,7 @@
     "editor.renderWhitespace": "none",
     "editor.minimap.enabled": false,
     "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 15,
     "telemetry.enableTelemetry": false,
     "gitlens.advanced.telemetry.enabled": false,
     "workbench.editor.highlightModifiedTabs": true,
@@ -274,13 +274,13 @@
     },
     "eslint.enable": true,
     "eslint.format.enable": true,
-    "workbench.editor.showTabs": true,
+    "workbench.editor.showTabs": "multiple",
     "git.enableCommitSigning": true,
     "ruby.rubocop.useBundler": true,
     "eslint.codeAction.showDocumentation": {
         "enable": true
     },
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "go.delveConfig": {
         "dlvLoadConfig": {
             "followPointers": true,
@@ -315,17 +315,18 @@
         "**/.factorypath": true
     },
     "workbench.tree.indent": 12,
-    "terminal.integrated.scrollback": 2000,
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "terminal.integrated.scrollback": 100000,
+    "workbench.colorTheme": "Aura Dark",
     "python.defaultInterpreterPath": "/Users/antw/.pyenv/shims/python",
     "ansible.ansibleLint.enabled": false,
     "ansible.ansible.useFullyQualifiedCollectionNames": true,
     "editor.inlineSuggest.enabled": true,
     "github.copilot.enable": {
         "*": true,
-        "yaml": true,
         "plaintext": true,
-        "markdown": false
+        "markdown": true,
+        "scminput": false,
+        "yaml": true
     },
     "editor.linkedEditing": true,
     "go.toolsManagement.autoUpdate": true,
@@ -338,11 +339,20 @@
         "editor.formatOnType": true,
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
-        "editor.semanticHighlighting.enabled": true
+        "editor.semanticHighlighting.enabled": true,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "editor.rulers": [
+            120
+        ]
     },
-    "byesig.fold": false,
     "byesig.enabled": true,
-    "byesig.opacity": 0.5,
+    "byesig.opacity": 0.75,
+    "redhat.telemetry.enabled": false,
+    "rubyLsp.enableExperimentalFeatures": true,
+    "gitlens.rebaseEditor.ordering": "asc",
     "byesig.showIcon": false,
-    "redhat.telemetry.enabled": false
+    "byesig.fold": false,
+    "workbench.editor.pinnedTabsOnSeparateRow": true
 }

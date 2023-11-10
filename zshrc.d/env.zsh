@@ -7,3 +7,6 @@ export BUNDLER_EDITOR="code"
 export PAGER=less
 
 export HOMEBREW_NO_ANALYTICS=1
+
+export GOPATH=$HOME
+export PATH=$PATH:$GOPATH/bin

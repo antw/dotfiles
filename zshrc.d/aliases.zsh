@@ -1,2 +1,2 @@
 alias be="bundle exec"
-alias ls="eva"
+alias ls="exa"

@@ -712,7 +712,7 @@
         }
       },
       "iterm2": {
-        "version": "3.4.19",
+        "version": "3.4.20",
         "options": {
           "full_name": "iterm2",
           "args": {
@@ -721,7 +721,7 @@
         }
       },
       "karabiner-elements": {
-        "version": "14.11.0",
+        "version": "14.12.0",
         "options": {
           "full_name": "karabiner-elements",
           "args": {
@@ -739,7 +739,7 @@
         }
       },
       "little-snitch": {
-        "version": "5.5",
+        "version": "5.7",
         "options": {
           "full_name": "little-snitch",
           "args": {
@@ -748,7 +748,7 @@
         }
       },
       "raycast": {
-        "version": "1.47.3",
+        "version": "1.58.0",
         "options": {
           "full_name": "raycast",
           "args": {
@@ -757,7 +757,7 @@
         }
       },
       "rectangle": {
-        "version": "0.65,71",
+        "version": "0.70",
         "options": {
           "full_name": "rectangle",
           "args": {
@@ -766,7 +766,7 @@
         }
       },
       "spotify": {
-        "version": "1.2.4.912,949d5fd0,267",
+        "version": "1.2.19.941,bf202593,417",
         "options": {
           "full_name": "spotify",
           "args": {
@@ -779,12 +779,12 @@
   "system": {
     "macos": {
       "ventura": {
-        "HOMEBREW_VERSION": "3.6.20",
+        "HOMEBREW_VERSION": "4.1.10",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "282577452fbbc2e50ae68962f6ff13e76750d16b",
-        "CLT": "14.2.0.0.1.1668646533",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "14.3.1.0.1.1683849156",
         "Xcode": "14.2",
-        "macOS": "13.2"
+        "macOS": "13.5"
       }
     }
   }
